@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body class="<%= locals.form ? locals.form.color : "" %>">
+
+        <a class="saludos" href="/saludos">Visitanos</a>
+
+    
+    <% if (locals.form) { %>
+    <div> 
+        
+            Hola <%= locals.form.nombre %> , elegiste el color: <%= locals.form.color %>, tu email es: <%= locals.form.email %> y tu edad es: <%= locals.form.edad %>
+         
+    </div>
+    <% } else{ %>
+        <form method="POST" action="/form">
+            <div>
+                <label for=""> Ingrese su nombre</label>
+                <input type="text" name="nombre">
+                <small class="error"><%= locals.errors && errors.nombre && errors.nombre.msg %></small>
+            </div>
+            <div>
+                <label>Elija un color</label>
+                <select name="color">
+                    <option value=""></option>
+                    <option value="rojo">Rojo</option>
+                    <option value="violeta">Violeta</option>
+                    <option value="rosa">Rosa</option>
+                    <option value="azul">Azul</option>
+                </select>
+                <small class="error"><%= locals.errors && errors.color && errors.color.msg %></small>
+            </div>
+            <div>
+                <Label>Recordar color</Label>
+                <input type="checkbox" name="rememberColor" value="1">
+            </div>
+            
+            <div>
+                <label for=""> Ingrese su Email</label>
+                <input type="text" name="email">
+                <small class="error"><%= locals.errors && errors.email && errors.email.msg %></small>
+            </div>
+            
+            <div>
+                <label for=""> Ingrese su Edad</label>
+                <input type="number" name="edad">
+                <small class="error"><%= locals.errors && errors.edad && errors.edad.msg %></small>
+            </div>
+            
+    
+            <button type="submit">Enviar</button>
+        </form>
+    <% } %>
+
+    
+</body>
+</html>

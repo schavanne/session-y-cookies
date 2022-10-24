@@ -1,0 +1,42 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.error{
+  color:red;
+}
+label,input,select{
+  display: block !important;
+}
+.violeta{
+  background-color: #ae00ff;
+}
+.rojo{
+  background-color: #ff002b;
+}
+.azul{
+  background-color: #006eff;
+}
+.rosa{
+  background-color: #ff00b3;
+}
+.olvidar{
+  background-color: #fff;
+  color:#000;
+
+}
+.saludos{
+  background-color:rgb(2, 129, 55);
+  color: #fff;
+  padding: 4px 20px;
+  display: block;
+  margin-left:auto ;
+  margin-right:0px ;
+  margin-bottom: 10px;
+  width: 100px;
+  text-align: center;
+}
